@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+       <style>
+            h1{
+                font-family: "Allerta Stencil", Sans-serif;
+                margin-left: 50px;
+                margin-bottom: 0%;
+                font-size: 50px;
+            }
+      ul {
+  width:100%;
+  
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #000000 ;
+  border-radius: 25px;
+  background-color: #ffffff;
+  
+}
+
+
+ul li {
+  float: left;
+}
+ul li a {
+  font-family: 'Varela Round'; font-size: 37px;
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right: 100px;
+  margin-left: 80px;
+  margin-bottom: 0%;
+}
+
+li a:hover {
+  background-color:#FFDE59;
+  border-radius: 25px;
+}
+
+.myform{
+    background-color: #FFDE59; 
+    border-radius: 25px;
+    height:350px;
+    width:250px;
+}
+p{
+    font-family: "Great Vibes", cursive;
+    font-size:42px;
+}
+</style>
+</head>
+    <body>
+        <h1> MoviesNow </h1>
+        <ul>
+            <b>
+            <li><a href="main.html">Upcoming</a></li>
+            <li><a href="trending.html">Trending</a></li>
+            <li><a href="genres.html">Genres</a></li>
+            <li style="background-color: #FFDE59; border-radius: 25px;"><a href="profile.html">Signup</a></li>
+            </b>
+        </ul>
+        
+            <center>
+                <div class="myform">
+        <form style="margin-top: 100px;" name="myform" method="post">
+            <br>
+            <p ><b>Signup!</b></p>
+            <input type="text" name="name" id="name" placeholder="Name"><br><br>
+            <input type="email" name="email" id="email" placeholder="Email"><br><br>
+            <input type="text" name="language" id="language" placeholder="Language"><br><br>
+            <input type="text" name="phone" id="phone" placeholder="Phone"><br> <br>
+            <input type="button" value="Submit" name="set" onclick="setcookies()">
+        </form>
+    </div>
+    </center>
+    
+        
+        <script>
+            function setcookies()
+        {
+            alert("Thank you for joining us!");
+            document.cookie="username=" + document.myform.name.value;
+            document.cookie="email=" + document.myform.email.value;
+            document.cookie="language=" + document.myform.language.value;
+            document.cookie="phone no=" + document.myform.phone.value;
+            var cookiesarray=document.cookie.split(";");
+            for(var i=0;i<cookiesarray.length;i++)
+            {
+            var valuearray=cookiesarray[i].split("=");
+            console.log(valuearray);
+            }
+  
+        }
+
+            </script>
+    </body>
+</html>

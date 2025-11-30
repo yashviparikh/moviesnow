@@ -1,0 +1,110 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+        <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Noto Serif' rel='stylesheet'>
+    <style>
+        
+            h1{
+                font-family: "Allerta Stencil", Sans-serif;
+                margin-left: 50px;
+                margin-bottom: 0%;
+                font-size: 50px;
+            }
+      ul {
+        position: fixed;
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #000000 ;
+  border-radius: 25px;
+  background-color: #ffffff;
+  
+}
+
+
+ul li {
+  float: left;
+}
+ul li a {
+    font-family: 'Varela Round'; font-size: 37px;
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  margin-right: 100px;
+  margin-left: 80px;
+  margin-bottom: 0%;
+}
+
+li a:hover {
+  background-color:#FFDE59;
+  border-radius: 25px;
+}
+
+.moviebox { 
+            width: 1500px; 
+            height: 390px; 
+            padding: 1px; 
+            box-sizing: border-box; 
+            border: 2px solid black; 
+            margin-left: 2px;
+            margin-top: 100px;
+        } 
+.boxcontent { 
+           margin-left: 100px;
+        } 
+</style>
+<script language="Javascript">
+MySlides=new Array('crew.jpg','shaitaan.jpg','fighter.jpg','mainatalhoon.jpeg');
+const titles=["Crew", "Shaintaan", "Fighter","Main Atal Hoon"];
+const ratings=['5stars.png','4stars.png','3stars.png','4stars.png'];
+let Slide=0;
+function ShowSlides(SlideNumber)
+{
+Slide=Slide+SlideNumber ;
+if (Slide>MySlides.length-1)
+{ 
+Slide=0;
+}
+if (Slide<0) 
+{ 
+Slide=MySlides.length-1;
+}
+document.DisplaySlide.src=MySlides[Slide];
+document.getElementById("thetitle").innerHTML=titles[Slide];
+document.rating.src=ratings[Slide];
+}
+ </script>
+</head>
+<body>
+    <h1> MoviesNow </h1>
+        <ul>
+            <b>
+            <li><a href="main.html">Upcoming</a></li>
+            <li style="background-color: #FFDE59; border-radius: 25px;"><a href="trending.html">Trending</a></li>
+            <li><a href="genres.html">Genres</a></li>
+            <li><a href="profile.html">Signup</a></li>
+            </b>
+          </ul>
+<div class="moviebox">
+    <div class="boxcontent">
+  <i><p id="thetitle" style="font-size:100px; margin-left: 20px; margin-right: 5px;margin-top:2px;margin-bottom: 0%;"> Crew</p></i>
+  <img class="slideshowpic" src="crew.jpg" name="DisplaySlide" width="500" height="300" align="right" style="margin-top: -70px;margin-bottom: 70px; margin-left:150px; margin-right:40px;">
+
+  <img name="rating" src="5stars.png" height="75" style="margin-left:20px;">
+
+  <p style="font-family:'Noto Serif'; font-size:40px; margin-left: 20px; margin-right: 5px;margin-top: 5px;margin-bottom: 0%;"> Let us know your rating!</p>
+
+    <img height=95px src="starbefore.png" name="star1" onmouseover="document.star1.src='starafter.png'"> <img height=95px src="starbefore.png" name="star2" onmouseover="document.star2.src='starafter.png'"> 
+    <img height=95px src="starbefore.png" name="star3" onmouseover="document.star3.src='starafter.png'"> <img height=95px src="starbefore.png" name="star4" onmouseover="document.star4.src='starafter.png'"> 
+    <img  height=95px src="starbefore.png" name="star5" onmouseover="document.star5.src='starafter.png'"> <br>
+    <input type="button" value="Back" onclick="ShowSlides(-1)">
+    <input type="button" value="Forward" onclick="ShowSlides(1)">
+        </div>
+        </div>
+</body>
+</html>
